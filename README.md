@@ -1,5 +1,5 @@
 # ExtractedImg
-web service. Extracte from HAR File(HTTP Archive File ) include BASE64 string to jpeg file.
+web service. Extracte from HAR File( HTTP Archive File ) include BASE64 string to jpeg file.
 
 ブラウザのF12ボタンや、レスポンス解析ツールから生成できるHAR(HTTP Archive File)からjpegファイルを生成します。
 
@@ -12,3 +12,7 @@ web service. Extracte from HAR File(HTTP Archive File ) include BASE64 string to
 ## 備考
 * ごめんなさい、Windows用です。
 * 任意に、アップロードのフォルダ（プログラム上では定数[UPLOAD_FOLDER]）を指定しなおしてください。
+
+* HARファイルは、ブラウザを起動後、"F12"ボタンを押下して、Devtool画面を表示。
+  その後、"ネットワーク"タブの開き、ブラウザとサーバ間のやり取りの情報を残すデータが、HARファイルとなります。
+  大体、"HARで保存"、"HARでエキスポート"のメニューがあったりします。
