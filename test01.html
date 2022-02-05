@@ -5,30 +5,40 @@
         <meta name="description" content="説明文">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="test01.css">
+        <script>
+            function buttonClick(){
+                // エラーチェック
+                if (document.getElementById('input_file').value === ""){
+                    window.alert("ファイルが選択されていません");
+                } else {
+                                        
+                }
+            }
+        </script>
     </head>
     <body>
         <div id="header">
             <h1>HARファイル(HTTP Archive)のBASE64コードを画像にする</h1>
-            <div>こんな時に利用できます</div>
-            <ul>
-                <li>表示したページ画像が、すべてBASE64形式になっている</li>
-                <li>かつ、大量に含まれてて、一つずつ取り出すのがめんどくさい</li>
-            </ul>
         </div>
         <div id="main">
-            HARファイルを選択して下さい。生成した画像を圧縮してダウンロードします<br>
-            <!--<form id="form_file">-->
             <form id="form_file" action="https://localhost/ExtractedImg.php" method="post" enctype="multipart/form-data" >
-                <input type="file" name="input_file" >
-                <input type="submit" name="input_exe" size="50" value="実行"  >
+                <div id="refer">
+                    <input type="file" id="input_file" accept=".har">
+                </div>
+                <input type="button" id="input_exe" class="exec_btn" value="取 出" onclick="buttonClick()" >
             </form>
         </div>
         <div id="description">
-            ブラウザのF12ボタンを押下し、一度欲しい画像ファイルを表示させた後、「HAR」で保存を選んでください。<br>
-            [画像を使い、説明書き予定]
+
+                ブラウザのF12ボタンを押下し、ネットワークタブ上で「保存」を選んでください。それがHARファイルになります<br><br>
+                <div>こんな時に利用できます</div>
+                <ul>
+                    <li>表示したページ画像が、すべてBASE64形式になっている</li>
+                    <li>かつ、大量に含まれてて、一つずつ取り出すのがめんどくさい</li>
+                </ul>
+
         </div>
         <div id="footer">
-
         </div>
     </body>
 

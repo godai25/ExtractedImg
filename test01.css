@@ -1,13 +1,32 @@
 @charset "utf-8";
-#form_file {
+body{
+    text-align: center;
+}
+#header{
+    height: 150px;
+}
+#refer {
     border: 2px solid green;
     border-radius: 10px;
     margin: 10px;
     width: 450px;
-    height: 30px;
+    height: 28px;
     padding: 10px;
     display: inline-block;
+    text-align: left;
    }
-   input[name="input_file"]{
-       width: 400px;
-   }
+#input_exe {
+    width: 80px;
+    padding: 6px;
+    box-sizing: border-box;
+    border: 1px solid #68779a;
+    font-size: 16px;
+    color: #eee;
+    background: green;
+    cursor: pointer;
+    border-radius:10%;
+}
+#description{
+    margin: 0% 20%;
+    text-align: left;
+}
