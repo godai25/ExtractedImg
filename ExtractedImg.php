@@ -11,7 +11,9 @@
 	//          Windows用です。base64をデコードするcertutilコマンドはファイルであることが必須
 	// -----------------------------------------------------------------
 
-	
+	var_dump($_FILES);
+	print('<br>----------<br>');
+	var_dump($_POST);
 	$tempfile  = $_FILES['input_file']['tmp_name'];
 	$filename  = get_upload_folder();
 	$filename .= $_FILES['input_file']['name'];
@@ -21,12 +23,16 @@
 	if (!is_uploaded_file($tempfile)) {
 		output_log("ファイルがアップロードされていません");
 		exit;
+	} else {
+		output_log("ファイルがアップロードされたよ！");
 	}
 
 	//-- ファイル移動失敗は終了
 	if ( !move_uploaded_file($tempfile , $filename )) {
 		output_log("[".$tempfile ."] -> [".$filename."]のファイル移動が完了できません。");
-	} 
+	} else {
+		output_log("[".$tempfile ."] -> [".$filename."]のファイル移動が完了！！");
+	}
 	
 	//-- ファイルをチェックしてBASE64データを画像へ
 	if (isset($filename) && file_exists($filename))	{

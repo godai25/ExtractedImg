@@ -11,7 +11,7 @@
                 if (document.getElementById('input_file').value === ""){
                     window.alert("ファイルが選択されていません");
                 } else {
-                                        
+                    document.form_file.submit()
                 }
             }
         </script>
@@ -21,11 +21,11 @@
             <h1>HARファイル(HTTP Archive)のBASE64コードを画像にする</h1>
         </div>
         <div id="main">
-            <form id="form_file" action="https://localhost/ExtractedImg.php" method="post" enctype="multipart/form-data" >
+            <form id="form_file" action="./ExtractedImg.php" method="post" enctype="multipart/form-data" name="form_file">
                 <div id="refer">
-                    <input type="file" id="input_file" accept=".har">
+                    <input type="file" id="input_file" name="input_file" accept=".har">
                 </div>
-                <input type="button" id="input_exe" class="exec_btn" value="取 出" onclick="buttonClick()" >
+                <input type="button" id="input_exe" class="exec_btn" value="取 出" onclick="buttonClick();" >
             </form>
         </div>
         <div id="description">
